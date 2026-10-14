@@ -1,32 +1,31 @@
-# mahadata-spark-cybersecurity
-# Replikasi PySpark MLlib: Cybersecurity Data Science & Log Classification
+# mahadata
+# Replikasi PySpark MLlib: Analisis Klasifikasi Log Keamanan Jaringan
 
-Repositori ini disusun untuk memenuhi **Tugas Eksplorasi Mandiri Mahadata / Big Data (IF25-40402)** di Institut Teknologi Sumatera (ITERA).
+Repositori ini dikembangkan guna memenuhi penugasan mandiri mata kuliah **Mahadata**
 
-Eksperimen ini melakukan **replikasi parsial** dari jurnal ilmiah bereputasi Scopus Q1 mengenai analisis klasifikasi log keamanan jaringan menggunakan pemrosesan data terdistribusi berbasis Apache Spark (PySpark MLlib).
+Proyek ini mereplikasi sebagian kerangka kerja dari jurnal internasional bereputasi mengenai pemanfaatan analitik data terdistribusi untuk keamanan siber menggunakan kerangka Apache Spark (PySpark MLlib).
 
 ---
 
-## Artikel Acuan
-- **Judul Artikel:** *Cybersecurity data science: an overview from machine learning perspective*
+## Literatur Referensi Utama
+- **Judul:** *Cybersecurity data science: an overview from machine learning perspective*
 - **Penulis:** I. H. Sarker, A. S. M. Kayes, S. Badsha, H. Alqahtani, P. Watters, & A. Ng
-- **Jurnal:** *Journal of Big Data* (Springer Nature, 2020)
 - **DOI:** [10.1186/s40537-020-00318-5](https://doi.org/10.1186/s40537-020-00318-5)
 
 ---
 
-## Ringkasan Metodologi Eksperimen
-1. **Data Generation & Ingestion:** Pembangkitan dataset simulasi log keamanan jaringan yang mencakup variabel ukuran data sumber (*SourceBytes*), ukuran data tujuan (*DestinationBytes*), protokol jaringan, waktu log, dan label ancaman.
-2. **Preprocessing & Feature Engineering:**
-   * Ekstraksi fitur temporal (`LogHour`) dari waktu log.
-   * Pengkodean variabel kategorikal protokol menggunakan `StringIndexer`.
-   * Perakitan vektor fitur menggunakan `VectorAssembler`.
-3. **Model Training & Evaluation:** Pelatihan model **Decision Tree Classifier** serta evaluasi metrik akurasi (*Accuracy*) dan waktu eksekusi pelatihan.
+## Alur Kerja & Metodologi Eksperimen
+1. **Inisiasi Data (*Data Generation*):** Membangkitkan rekam jejak simulasi log jaringan (mencakup metrik ukuran muatan data, waktu tanggap sistem, serta status tingkat ancaman).
+2. **Rekayasa Fitur (*Feature Engineering*):** 
+   - Mengekstrak komponen temporal (`LogHour`) dari atribut waktu kejadian.
+   - Mengonversi teks kategori koneksi menggunakan `StringIndexer`.
+   - Menyusun matriks variabel terpadu lewat fungsi `VectorAssembler`.
+3. **Pemodelan & Evaluasi:** Pelatihan algoritma **Decision Tree Classifier** dilanjutkan dengan pengukuran tingkat ketepatan ramalan (*Accuracy*) serta pencatatan durasi komputasi.
 
 ---
 
-## Struktur Berkas Repository
-- `EksperimenCybersecurityDT.ipynb` : Notebook utama eksperimen PySpark.
-- `requirements.txt` : Daftar pustaka Python yang dibutuhkan.
-- `hasil_cybersecurity_dt.csv` : Berkas keluaran metrik hasil evaluasi model.
-- `README.md` : Dokumentasi lengkap repositori.
+## Berkas di Dalam Repositori
+- `EksperimenCybersecurityDT.ipynb` : Berkas utama notebook eksperimen PySpark.
+- `requirements.txt` : Rincian pustaka pendukung lingkungan Python.
+- `hasil_cybersecurity_dt.csv` : Rekapitulasi metrik evaluasi model.
+- `README.md` : Dokumentasi penjelasan repositori.
